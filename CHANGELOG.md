@@ -1,3 +1,6 @@
+v2.9.2 (2021-2-2)
+------------------
+- Replaced usage of deprecated jQuery functions and shorthands.
 
 v2.9.1 (2016-7-31)
 ------------------
