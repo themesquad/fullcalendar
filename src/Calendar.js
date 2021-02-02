@@ -564,7 +564,7 @@ function Calendar_constructor(element, overrides) {
 
 		if (t.options.handleWindowResize) {
 			windowResizeProxy = debounce(windowResize, t.options.windowResizeDelay); // prevents rapid calls
-			$(window).resize(windowResizeProxy);
+			$(window).on('resize', windowResizeProxy);
 		}
 	}
 

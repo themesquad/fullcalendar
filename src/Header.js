@@ -145,7 +145,7 @@ function Header(calendar) {
 									innerHtml +
 								'</button>'
 								)
-								.click(function(ev) {
+								.on('click', function(ev) {
 									// don't process clicks for disabled buttons
 									if (!button.hasClass(tm + '-state-disabled')) {
 
@@ -161,7 +161,7 @@ function Header(calendar) {
 										}
 									}
 								})
-								.mousedown(function() {
+								.on('mousedown', function() {
 									// the *down* effect (mouse pressed in).
 									// only on buttons that are not the "active" tab, or disabled
 									button
@@ -169,26 +169,24 @@ function Header(calendar) {
 										.not('.' + tm + '-state-disabled')
 										.addClass(tm + '-state-down');
 								})
-								.mouseup(function() {
+								.on('mouseup', function() {
 									// undo the *down* effect
 									button.removeClass(tm + '-state-down');
 								})
-								.hover(
-									function() {
-										// the *hover* effect.
-										// only on buttons that are not the "active" tab, or disabled
-										button
-											.not('.' + tm + '-state-active')
-											.not('.' + tm + '-state-disabled')
-											.addClass(tm + '-state-hover');
-									},
-									function() {
-										// undo the *hover* effect
-										button
-											.removeClass(tm + '-state-hover')
-											.removeClass(tm + '-state-down'); // if mouseleave happens before mouseup
-									}
-								);
+								.on('mouseenter', function() {
+									// the *hover* effect.
+									// only on buttons that are not the "active" tab, or disabled
+									button
+										.not('.' + tm + '-state-active')
+										.not('.' + tm + '-state-disabled')
+										.addClass(tm + '-state-hover');
+								})
+								.on('mouseleave', function() {
+									// undo the *hover* effect
+									button
+										.removeClass(tm + '-state-hover')
+										.removeClass(tm + '-state-down'); // if mouseleave happens before mouseup
+								});
 
 							groupChildren = groupChildren.add(button);
 						}
