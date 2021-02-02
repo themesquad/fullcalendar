@@ -76,7 +76,7 @@ function makeMoment(args, parseAsUTC, parseZone) {
 				isAmbigZone = true;
 			}
 		}
-		else if ($.isArray(input)) {
+		else if (Array.isArray(input)) {
 			// arrays have no timezone information, so assume ambiguous zone
 			isAmbigZone = true;
 		}

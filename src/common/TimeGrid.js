@@ -133,7 +133,7 @@ var TimeGrid = FC.TimeGrid = Grid.extend(DayTableMixin, {
 		// might be an array value (for TimelineView).
 		// if so, getting the most granular entry (the last one probably).
 		input = view.opt('slotLabelFormat');
-		if ($.isArray(input)) {
+		if (Array.isArray(input)) {
 			input = input[input.length - 1];
 		}
 
