@@ -17,7 +17,7 @@ $.fn.fullCalendar = function(options) {
 
 		// a method call
 		if (typeof options === 'string') {
-			if (calendar && $.isFunction(calendar[options])) {
+			if (calendar && typeof calendar[options] === 'function') {
 				singleRes = calendar[options].apply(calendar, args);
 				if (!i) {
 					res = singleRes; // record the first method call result

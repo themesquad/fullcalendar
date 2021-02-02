@@ -572,7 +572,7 @@ Grid.mixin({
 			// Test that the dragged element passes the dropAccept selector or filter function.
 			// FYI, the default is "*" (matches all)
 			accept = view.opt('dropAccept');
-			if ($.isFunction(accept) ? accept.call(el[0], el) : el.is(accept)) {
+			if (typeof accept === 'function' ? accept.call(el[0], el) : el.is(accept)) {
 				if (!this.isDraggingExternal) { // prevent double-listening if fired twice
 					this.listenToExternalDrag(el, ev, ui);
 				}

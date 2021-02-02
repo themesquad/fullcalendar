@@ -812,7 +812,7 @@ function isAtomic(val) {
 
 
 function applyAll(functions, thisObj, args) {
-	if ($.isFunction(functions)) {
+	if (typeof functions === 'function') {
 		functions = [ functions ];
 	}
 	if (functions) {
